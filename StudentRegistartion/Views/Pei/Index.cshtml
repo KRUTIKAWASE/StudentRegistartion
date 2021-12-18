@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript">$(function() {/from   w  w w  . j a  va2  s.c o  m/
+  $('#container').highcharts({
+    chart: {
+      polar: true,
+      type: 'area'
+    },
+    title: {
+      text: '',
+      x: -80
+    },
+    pane: {
+      size: '90%'
+    },
+    xAxis: {
+      categories: ['vision for the future', 'look/attire', 'Body structure', 'physical challenge', 'social acceptance','adaptability','taking responsibility','creating your own resource','drive for successfully delivery','self awareness','inspring','clarity of the target','goal oriented preparation'],
+      tickmarkPlacement: 'on',
+      lineWidth: 0
+    },
+    yAxis: {
+      gridLineInterpolation: 'circle',
+      lineWidth: 0,
+      tickInterval: 1,
+    },
+    tooltip: {
+      shared: true,
+      pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+    },
+    credits: {
+      enabled: false
+    },
+    exporting: {
+      enabled: false
+    },
+    legend: {
+      enabled: false
+    },
+    series: [{
+      name: 'Planning',
+      type: 'area',
+      color: {
+        radialGradient: {
+           cx: 0.25,
+          cy: 0.4,
+          r: 0.5
+        },
+        stops: [
+          [0.25, '#ff0000'],
+          [0.5, '#ff8000'],
+          [0.75, '#feff00'],
+          [1, '#3eff00']
+        ]
+      },
+      data: [1, 2, 3, 1, 2, 1, 1, 3, 2, 1, 1, 2],
+      pointPlacement: 'on'
+    }]
+  });
+});</script>
+</head>
+<body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <div id="container" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <script src="~/Content/Pages/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/Pages/ICard.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <title>ICard Form</title>
+</head>
+<body>
+    <div class="col-sm-12">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+
+                <h2>ICard</h2>
+                <label>Name</label>
+                <input id="txtName" type="text" class="form-control" name="name" placeholder="enter your name" /><br />
+                <label>Designation</label>
+                <input id="txtDesig" type="text" class="form-control" name="designation" placeholder="enter your designation" /><br />
+                <label>DOB</label>
+                <input id="txtDob" type="date" class="form-control" name="dob" placeholder="enter your dob" /><br />
+                <label>Expired</label>
+                <input id="txtExpired" type="date" class="form-control" name="expired" placeholder="enter your limit" /><br />
+                <label>Photo</label>
+                <input id="txtPhoto" type="file" class="form-control" name="photo" placeholder="upload photo"/><br />
+
+                <center><button id="btnSave" type="submit" class="btn btn-success" value="save" onclick="SaveICard()">Submit</button></center>
+            
+        </div>
+        
+        <div class="col-sm-2"></div>
+    </div>
+
+   
+</body>
+</html>

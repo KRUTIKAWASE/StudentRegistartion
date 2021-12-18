@@ -1,0 +1,143 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/sunburst.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+<body>
+    <div>
+        <figure class="highcharts-figure">
+            <div id="container"></div>
+            <p class="highcharts-description">
+                Sunburst charts are used to visualize hierarchical data in a
+                circular shape. The inner elements are parent nodes, with
+                child nodes distributed on the outer rings. Click on a parent
+                node to drill down and inspect the tree in more detail.
+            </p>
+        </figure>
+        <script>
+            var data = [{
+                id: '0.0',
+                parent: '',
+                color: 'red',
+                name: 'POOR'
+            }, {
+                id: '1.1',
+                parent: '0.0',
+                color: 'yellow',
+                name: 'GOOD'
+            },
+
+            /* Africa */
+            {
+                id: '2.1',
+                parent: '1.1',
+                color: 'green',
+                name: 'VERY GOOD'
+            },
+
+            {
+                id: '0',
+                parent: '2.1',
+                name: '',
+                color: 'white',
+                value: 1
+            }];
+
+
+            Highcharts.chart('container', {
+
+                chart: {
+                    polar: true
+                },
+
+                title: {
+                    text: 'Uplif.com'
+                },
+
+                subtitle: {
+                    text: 'Also known as Radar Chart'
+                },
+
+                pane: {
+                    startAngle: 0,
+                    endAngle: 360
+                },
+
+                xAxis: {
+                    tickInterval: 1,
+                    min: 0,
+                    max: 360,
+                    labels: {
+                        format: 'hi'
+                    }
+                },
+
+                yAxis: {
+                    min: 0
+                },
+
+                plotOptions: {
+                    series: {
+                        pointStart: 0,
+                        pointInterval: 30
+                    },
+                    column: {
+                        pointPadding: 0,
+                        groupPadding: 0
+                    }
+                },
+
+
+                series: [{
+                    type: 'sunburst',
+                    name: 'Column',
+                    data: data,
+                    pointPlacement: 'between',
+                    allowDrillToNode: true,
+                    cursor: 'pointer',
+
+                    levels: [{
+                        level: 1,
+                        levelIsConstant: false,
+
+                    }, {
+                        level: 2,
+                        colorByPoint: true
+                    },
+                    {
+                        level: 3,
+                        colorVariation: {
+                            key: 'brightness',
+                            to: -0.5
+                        }
+                    }, {
+                        level: 4,
+                        colorVariation: {
+                            key: 'brightness',
+                            to: 0.5
+                        }
+                    }]
+
+                }],
+
+                tooltip: {
+                    headerFormat: '',
+                    pointFormat: 'The population of <b>{point.name}</b> is <b>{point.value}</b>'
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>

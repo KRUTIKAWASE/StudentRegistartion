@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Content/Pages/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/Pages/Special.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="col-sm-12">
+        <div class="col-sm-6">
+            <h2>ImageUpload</h2>
+            Name:
+            <input id="txtName" type="text" class="form-control" placeholder="enter image name" /><h1></h1>
+            Image Upload:
+            <input id="File1" type="file" class="form-control" placeholder="Upload Image" /><h1></h1>
+            Price:
+            <input id="txtPrice" type="text" class="form-control" placeholder="enter price" /><h1></h1>
+            Contact:
+            <input id="txtContact" type="text" class="form-control" placeholder="enter contact" /><h1></h1>
+            <div class="form-group">
+                <label>CompanyName:</label>
+                <select id="ddlCompany" class="form-control">
+                    <option>Navratna Mauganese Products LLP.</option>
+                    <option>Agastya Trader</option>
+                    <option>Vijay Enterprises</option>
+                    <option>Siddhant Enterprises</option>
+                    <option>Manmohan Minerals & Chemicals Pvt.Ltd.-C</option>
+                </select>
+                
+            </div>
+
+
+            <button id="btnSub" class="btn btn-success" type="submit" value="submit" onclick="saveProduct()">Submit</button>
+        </div>
+
+        <div class="col-sm-6">
+
+            <h2>ImageDisplay</h2>
+
+            <select id="ddlCompanyName" class="form-control">
+                <option>Navratna Mauganese Products LLP.</option>
+                <option>Agastya Trader</option>
+                <option>Vijay Enterprises</option>
+                <option>Siddhant Enterprises</option>
+                <option>Manmohan Minerals & Chemicals Pvt.Ltd.-C</option>
+            </select>
+            <button id="btnSearch" onclick="getList()"> Search</button><h1></h1>
+
+            <table id="tblProduct" class="table-responsive" border="1">
+                <thead>
+                <th>ID</th>
+                <th>ProdName</th>
+                <th>Price</th>
+                <th>Contact</th>
+                <th>Image</th>
+                <th>CompanyName</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

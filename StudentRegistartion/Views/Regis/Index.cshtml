@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Content/Pages/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/Pages/Register.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body>
+    <div class="col-sm-5">
+        <h2>Registration</h2>
+        Name:
+        <input id="txtName" type="text" class="form-control" placeholder="enter name" /><h1></h1>
+        Email:
+        <input id="txtEmail" type="text" class="form-control" placeholder="Enter Email" /><h1></h1>
+        MobileNo:
+        <input id="txtPhone" type="text" class="form-control" placeholder="enter phone" /><h1></h1>
+        Address:
+        <input id="txtAdd" type="text" class="form-control" placeholder="enter address" /><h1></h1>
+        State:
+        <input id="txtState" type="text" class="form-control" placeholder="enter state" /><h1></h1>
+        Password:
+        <input id="txtPass" type="password" class="form-control" placeholder="enter password" /><h1></h1>
+
+        <button id="btnSub" class="btn btn-success" type="submit" value="submit" onclick="saveRegister()">Submit</button>
+    </div>
+
+    <div class="col-sm-5">
+        <h2>List</h2>
+        <table id="tblRegistration" class="table-responsive" border="1">
+            <thead>
+            <th>StudeID</th>
+            <th>StudName</th>
+            <th>Email</th>
+            <th>MobileNo</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>Password</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+</html>

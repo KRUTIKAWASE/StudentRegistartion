@@ -1,0 +1,52 @@
+﻿
+@using StudentRegistartion.Models;
+@model LoginModel
+@{ Layout = null; }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/jquery-confirm-master/css/jquery-confirm.css" rel="stylesheet" />
+
+</head>
+<body>
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @if (@ViewBag.Message != null)
+    {
+        @ViewBag.Message
+    }
+    @using (Html.BeginForm("LoginIN", "Login", FormMethod.Post))
+    {
+        <div>
+            @Html.LabelFor(a => a.UserName)
+            @Html.TextBoxFor(a => a.UserName, new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(a => a.UserName)
+        </div>
+        <div>
+            @Html.LabelFor(a => a.Password)
+            @Html.TextBoxFor(a => a.Password, new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(a => a.Password)
+        </div>
+        <div class="form-group loginbuttonsSections">
+            <a href="#" class="forgotPasswordText">Forgot Password?</a>
+            <input type="submit" value="Login" class="btn btn-info" />
+
+
+        </div>
+
+
+     }
+
+</body>
+<script src="~/Content/jquery-confirm-master/js/jquery-confirm.js"></script>
+
+</html>
+

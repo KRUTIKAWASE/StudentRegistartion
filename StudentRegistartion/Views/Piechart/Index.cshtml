@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <script src="~/Content/piechartJS/PiechartScript1.js"></script>
+    <script src="~/Content/piechartJS/PiechartScript2.js"></script>
+
+    <link href="~/Content/piechart.css" rel="stylesheet" />
+</head>
+<body>
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+        <p class="highcharts-description">
+            A polar chart showing different series types on a radial axis. Polar
+            charts, also known as a radar charts, are often used to compare
+            multivariate data sets. A polar chart in Highcharts is simply a
+            cartesian chart where the X axis is wrapped around the perimeter. It
+            can render common cartesian series types like line, column, area or
+            arearange.
+        </p>
+    </figure>
+
+    <script>
+        Highcharts.chart('container', {
+
+            chart: {
+                polar: true
+            },
+
+            title: {
+                text: 'Highcharts Polar Chart'
+            },
+
+            subtitle: {
+                text: 'Also known as Radar Chart'
+            },
+
+            pane: {
+                startAngle: 0,
+                endAngle: 360
+            },
+
+            xAxis: {
+                categories: ['CREATE', 'lOOK SHAPING YOUR PERSONALITY', 'HUNGER OF EXCELLENCE', 'SEEDING', 'PATH FINDER', 'HARSHALI MAM']
+            },
+
+            yAxis: {
+                min: 0
+            },
+
+            series: [{
+                type: 'column',
+                name: 'Column',
+                data: [8, 7, 6, 5, 4, 3],
+                pointPlacement: 'between'
+            }, {
+                type: 'line',
+                name: 'Line',
+                data: [1, 2, 3, 4, 5, 6]
+            }, {
+                type: 'area',
+                name: 'Area',
+                data: [1, 8, 2, 7, 3, 6]
+            }]
+        });
+    </script>
+</body>
+</html>
